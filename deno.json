@@ -1,13 +1,31 @@
 {
   "imports": {
     "@/": "./src/",
-    "hono": "jsr:@hono/hono@^4.6.12",
-    "prisma": "jsr:@prisma/client@^6.0.1"
+    "#prisma/client": "./prisma/client.ts",
+    "@prisma/client": "npm:@prisma/client@^6.0.1",
+    "@std/path": "jsr:@std/path@^1.0.6",
+    "hono": "jsr:@hono/hono@^4.6.12"
   },
   "tasks": {
     "start": "denon run -A src/main.ts",
     "prisma-db-pull": "deno run -A npm:prisma@latest db pull",
-    "prisma-generate": "deno run -A npm:prisma@latest generate"
+    "prisma": "deno run -A npm:prisma",
+    "prisma:generate": "deno task prisma generate --schema ./prisma/schema.prisma && deno task prisma:patch",
+    "prisma:patch": "deno run -A prisma/patch.ts"
+  },
+  "nodeModulesDir": "auto",
+  "fmt": {
+    "indentWidth": 2,
+    "semiColons": true,
+    "useTabs": false,
+    "exclude": [
+      "node_modules",
+      "drizzle",
+      "tsconfig.json",
+      "README.md",
+      ".devcontainer",
+      ".vscode"
+    ]
   },
   "compilerOptions": {
     "jsx": "precompile",
