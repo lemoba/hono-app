@@ -1,12 +1,15 @@
-import { Hono } from 'hono'
-import { apiRouter } from '@/routes/api.ts'
-import { appConfig } from '@/config/index.ts'
+import { Hono } from "hono";
+import { apiRouter } from "@/routes/api.ts";
+import { appConfig } from "@/config/index.ts";
+import { prettyJSON } from 'hono/pretty-json'
 
-const app = new Hono()
+const app = new Hono();
 
-app.route('/api', apiRouter)
+app.use(prettyJSON())
+
+app.route("/api", apiRouter);
 
 Deno.serve({
-    port: appConfig.APP_PORT,
-    hostname: '127.0.0.1'
-}, app.fetch)
+  port: appConfig.APP_PORT,
+  hostname: "127.0.0.1",
+}, app.fetch);
