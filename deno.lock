@@ -1,16 +1,64 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@hono/hono@^4.6.12": "4.6.12"
+    "jsr:@hono/hono@^4.6.12": "4.6.12",
+    "jsr:@std/dotenv@*": "0.225.2",
+    "npm:prisma@*": "6.0.1",
+    "npm:prisma@latest": "6.0.1"
   },
   "jsr": {
     "@hono/hono@4.6.12": {
       "integrity": "fa0b97fa7c3292f0d9957109ac07a475fe485868795b71b8e3114c284152cdb5"
+    },
+    "@std/dotenv@0.225.2": {
+      "integrity": "e2025dce4de6c7bca21dece8baddd4262b09d5187217e231b033e088e0c4dd23"
+    }
+  },
+  "npm": {
+    "@prisma/debug@6.0.1": {
+      "integrity": "sha512-jQylgSOf7ibTVxqBacnAlVGvek6fQxJIYCQOeX2KexsfypNzXjJQSS2o5s+Mjj2Np93iSOQUaw6TvPj8syhG4w=="
+    },
+    "@prisma/engines-version@5.23.0-27.5dbef10bdbfb579e07d35cc85fb1518d357cb99e": {
+      "integrity": "sha512-JmIds0Q2/vsOmnuTJYxY4LE+sajqjYKhLtdOT6y4imojqv5d/aeVEfbBGC74t8Be1uSp0OP8lxIj2OqoKbLsfQ=="
+    },
+    "@prisma/engines@6.0.1": {
+      "integrity": "sha512-4hxzI+YQIR2uuDyVsDooFZGu5AtixbvM2psp+iayDZ4hRrAHo/YwgA17N23UWq7G6gRu18NvuNMb48qjP3DPQw==",
+      "dependencies": [
+        "@prisma/debug",
+        "@prisma/engines-version",
+        "@prisma/fetch-engine",
+        "@prisma/get-platform"
+      ]
+    },
+    "@prisma/fetch-engine@6.0.1": {
+      "integrity": "sha512-T36bWFVGeGYYSyYOj9d+O9G3sBC+pAyMC+jc45iSL63/Haq1GrYjQPgPMxrEj9m739taXrupoysRedQ+VyvM/Q==",
+      "dependencies": [
+        "@prisma/debug",
+        "@prisma/engines-version",
+        "@prisma/get-platform"
+      ]
+    },
+    "@prisma/get-platform@6.0.1": {
+      "integrity": "sha512-zspC9vlxAqx4E6epMPMLLBMED2VD8axDe8sPnquZ8GOsn6tiacWK0oxrGK4UAHYzYUVuMVUApJbdXB2dFpLhvg==",
+      "dependencies": [
+        "@prisma/debug"
+      ]
+    },
+    "fsevents@2.3.3": {
+      "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw=="
+    },
+    "prisma@6.0.1": {
+      "integrity": "sha512-CaMNFHkf+DDq8zq3X/JJsQ4Koy7dyWwwtOKibkT/Am9j/tDxcfbg7+lB1Dzhx18G/+RQCMgjPYB61bhRqteNBQ==",
+      "dependencies": [
+        "@prisma/engines",
+        "fsevents"
+      ]
     }
   },
   "workspace": {
     "dependencies": [
-      "jsr:@hono/hono@^4.6.12"
+      "jsr:@hono/hono@^4.6.12",
+      "jsr:@prisma/client@^6.0.1"
     ]
   }
 }
